@@ -16,7 +16,15 @@ window.onscroll = function () {
     scrolled = false;
   }
 };
+// Submit form via AJAX for Netlify
+$("#callback-form").submit(function (e) {
+  e.preventDefault();
 
+  var $form = $(this);
+  $.post($form.attr("action"), $form.serialize()).then(function () {
+    alert("Thank you!");
+  });
+});
 // Smooth Scrolling
 $("#navbar a, .btn").on("click", function (e) {
   if (this.hash !== "") {
@@ -31,14 +39,4 @@ $("#navbar a, .btn").on("click", function (e) {
       800
     );
   }
-});
-
-// Submit form via AJAX for Netlify
-$("#callback-form").submit(function (e) {
-  e.preventDefault();
-
-  var $form = $(this);
-  $.post($form.attr("action"), $form.serialize()).then(function () {
-    alert("Thank you!");
-  });
 });
