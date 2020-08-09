@@ -186,7 +186,7 @@ img {
   outline-color: #28a745;
 }
 
-.callback-form .btn {
+.callback-form #submit {
   padding: 12px 0;
   margin-top: 20px;
 }
